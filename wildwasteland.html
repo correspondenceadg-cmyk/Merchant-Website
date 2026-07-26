@@ -578,6 +578,15 @@
       window.addEventListener('scroll', updateParallax, { passive: true });
       updateParallax();
     })();
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+</script>
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Chemlord's Wild Wasteland Shop</title>
+  <title>Your Store Name Here</title>
   <style>
     * {
       margin: 0;
@@ -403,7 +403,7 @@
   <div class="main-content">
     <div class="page active" id="page-home">
       <div class="banner-container">
-        <div class="banner">Chemlord's Wild Wasteland Shop</div>
+        <div class="banner">Your Store Name Here</div>
       </div>
       <div class="product-grid" id="product-grid"></div>
     </div>
@@ -473,17 +473,31 @@
       menuOverlay.addEventListener('click', closeMenu);
 
       // Products
+      const productNames = [
+        "Product 1",
+        "Service 2",
+        "Commodity 3",
+        "Item 4",
+        "Bauble 5",
+        "Merchandise 6",
+        "Trinket 7",
+        "Tchotchkes 8",
+        "Souvenir 9",
+        "Curio 10"
+      ];
+
       const productGrid = document.getElementById('product-grid');
-      for (let i = 1; i <= 10; i++) {
+      productNames.forEach((name, index) => {
+        const i = index + 1;
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
           <div class="product-img">[Image ${i}]</div>
-          <div class="product-name">Product #${i}</div>
+          <div class="product-name">${name}</div>
           <div class="product-price">$${(i * 9.99).toFixed(2)}</div>
         `;
         productGrid.appendChild(card);
-      }
+      });
 
       // Order tracking
       document.getElementById('track-btn').addEventListener('click', () => {
@@ -578,15 +592,15 @@
       window.addEventListener('scroll', updateParallax, { passive: true });
       updateParallax();
     })();
-<script>
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.addEventListener('keydown', e => {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) {
-      e.preventDefault();
-      return false;
-    }
-  });
-</script>
+
+    // Basic devtools / right-click blocking (demo only)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        return false;
+      }
+    });
   </script>
 </body>
 </html>
